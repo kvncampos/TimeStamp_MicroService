@@ -27,18 +27,15 @@ app.get("/api/hello", function (req, res) {
 // TimeStamp API Endpoint CurrentTime
 app.get("/api/", (req, res) => {
   let currentTime = new Date();
-  console.log(currentTime)
-
   let utc = currentTime.toUTCString();
   let unix = currentTime.getTime();
-
+  console.log('utc: ', utc, 'unix: ', unix)
   res.json({ utc, unix });
 });
 
 // TimeStamp API Endpoint ParamTime
 app.get("/api/:date", (req, res) => {
   let inputDate = req.params.date;
-  console.log(inputDate)
 
   let date;
   if (!isNaN(inputDate)) {
@@ -53,16 +50,12 @@ app.get("/api/:date", (req, res) => {
 
   let utc = date.toUTCString();
   let unix = date.getTime();
-
+  console.log(req.path, 'utc: ', utc, 'unix: ', unix)
   res.json({ utc, unix });
 });
 
 
 // listen for requests :)
-// var listener = app.listen(process.env.PORT, function () {
-  // console.log('Your app is listening on port ' + listener.address().port);
-// });
-// 
-var listener = app.listen(40001, function () {
+var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
