@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Fcc Api Projects Boilerplate" />
+  <img src="./.github/app.gif" alt="TimeStamp_MicroService" />
 
   &#xa0;
 
